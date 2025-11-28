@@ -3,14 +3,14 @@ import { Phone, Mail, Facebook, Instagram, Linkedin, Twitter, MapPin, ArrowUpRig
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-slate-950 pt-60 pb-12 mt-20 text-white overflow-hidden">
-        {/* Decorative Gradients */}
+    <footer className="relative bg-slate-950 pt-60 pb-12 mt-20 text-white">
+        {/* Decorative Gradients - Contained locally so they don't spill but don't clip the CTA */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
             <div className="absolute -top-[200px] left-1/2 transform -translate-x-1/2 w-[1000px] h-[500px] bg-teal-900/20 blur-[120px] rounded-full"></div>
         </div>
 
         {/* Floating CTA Banner */}
-        <div className="absolute top-0 left-0 w-full transform -translate-y-1/2 px-4 z-20">
+        <div className="absolute top-0 left-0 w-full transform -translate-y-1/2 px-4 z-50">
              <div className="max-w-7xl mx-auto bg-gradient-to-r from-teal-600 to-emerald-600 rounded-3xl overflow-hidden shadow-2xl relative">
                 {/* Abstract Patterns */}
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>

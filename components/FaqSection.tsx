@@ -7,7 +7,7 @@ const FaqSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-white py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="contact" className="bg-white py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           

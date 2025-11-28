@@ -1,4 +1,4 @@
-import { Lightbulb, Trophy, Headset, Briefcase, BarChart, Settings, Layers, Target, Users, Zap, Globe, Cpu, LineChart, Shield, Search, PenTool, Rocket, Repeat } from 'lucide-react';
+import { Lightbulb, Trophy, Headset, Briefcase, BarChart, Settings, Layers, Target, Users, Zap, Globe, Cpu, LineChart, Shield, Search, PenTool, Rocket, Repeat, DollarSign, Clock, CheckCircle2, Star, Sparkles } from 'lucide-react';
 
 export const NAV_LINKS = [
   { label: 'Home', href: '#', hasDropdown: true },
@@ -134,6 +134,43 @@ export const TEAM_MEMBERS = [
     image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1974&auto=format&fit=crop',
     bio: 'Full-stack architect specializing in cloud infrastructure and AI integration.'
   }
+];
+
+export const IMPACT_STATS = [
+    { label: "Capital Raised", value: "$500M+", icon: DollarSign, color: "text-green-400" },
+    { label: "Startups Scaled", value: "120+", icon: Rocket, color: "text-orange-400" },
+    { label: "Global Partners", value: "45", icon: Globe, color: "text-blue-400" },
+    { label: "Years Experience", value: "15+", icon: Clock, color: "text-purple-400" },
+];
+
+export const PRICING_PLANS = [
+    {
+        name: "Sprint",
+        price: "15k",
+        period: "/project",
+        description: "Rapid intervention for specific bottlenecks.",
+        features: ["2-Week Intensive", "Audit & Strategy", "Action Plan", "1 Month Support"],
+        highlight: false,
+        icon: Zap
+    },
+    {
+        name: "Transformation",
+        price: "45k",
+        period: "/quarter",
+        description: "Holistic restructuring for long-term growth.",
+        features: ["Full Org Assessment", "Process Re-engineering", "Tech Stack Optimization", "Executive Coaching"],
+        highlight: true,
+        icon: Sparkles
+    },
+    {
+        name: "Enterprise",
+        price: "Custom",
+        period: "",
+        description: "Dedicated partnership for global scale.",
+        features: ["Embedded Team", "M&A Advisory", "Global Expansion", "24/7 Strategic Access"],
+        highlight: false,
+        icon: Trophy
+    }
 ];
 
 export const FAQS = [
