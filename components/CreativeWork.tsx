@@ -1,15 +1,13 @@
 
 import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { CREATIVE_WORKS } from '../constants';
 
-const WORKS = [
-    { id: '01', title: 'Neon Syntax', category: 'Brand Identity', image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop' },
-    { id: '02', title: 'Void Walker', category: 'Web Experience', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop' },
-    { id: '03', title: 'Cyber Pulse', category: 'Product Design', image: 'https://images.unsplash.com/photo-1515630278258-407f66498911?q=80&w=1974&auto=format&fit=crop' },
-    { id: '04', title: 'Aether Core', category: 'Motion Graphics', image: 'https://images.unsplash.com/photo-1534239697880-96c2136e76d9?q=80&w=1968&auto=format&fit=crop' },
-];
+interface CreativeWorkProps {
+    onProjectSelect: (id: string) => void;
+}
 
-const CreativeWork: React.FC = () => {
+const CreativeWork: React.FC<CreativeWorkProps> = ({ onProjectSelect }) => {
     const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
     return (
@@ -23,12 +21,13 @@ const CreativeWork: React.FC = () => {
                 </div>
 
                 <div className="relative">
-                    {WORKS.map((work, idx) => (
+                    {CREATIVE_WORKS.map((work, idx) => (
                         <div 
-                            key={idx}
+                            key={work.id}
                             className="group relative border-t border-white/10 py-12 md:py-16 px-4 flex flex-col md:flex-row items-baseline md:items-center justify-between cursor-pointer transition-colors hover:bg-white/5"
                             onMouseEnter={() => setHoveredIdx(idx)}
                             onMouseLeave={() => setHoveredIdx(null)}
+                            onClick={() => onProjectSelect(work.id)}
                         >
                             <div className="flex items-baseline gap-8 md:gap-16 relative z-10 mix-blend-difference">
                                 <span className="text-teal-500 font-mono text-sm md:text-base">/{work.id}</span>

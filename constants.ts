@@ -1,4 +1,5 @@
-import { Lightbulb, Trophy, Headset, Briefcase, BarChart, Settings, Layers, Target, Users, Zap, Globe, Cpu, LineChart, Shield, Search, PenTool, Rocket, Repeat, DollarSign, Clock, CheckCircle2, Star, Sparkles } from 'lucide-react';
+
+import { Lightbulb, Trophy, Headset, Briefcase, BarChart, Settings, Layers, Target, Users, Zap, Globe, Cpu, LineChart, Shield, Search, PenTool, Rocket, Repeat, DollarSign, Clock, CheckCircle2, Star, Sparkles, HardHat, Hammer, Truck, Ruler, BrickWall, Warehouse, ArrowRight, Layout, PaintBucket, Building2, Ruler as RulerIcon } from 'lucide-react';
 
 export const NAV_LINKS = [
   { label: 'Home', href: '#', hasDropdown: true },
@@ -175,15 +176,216 @@ export const PRICING_PLANS = [
 
 export const FAQS = [
   {
-    question: "How do you ensure the success of a project?",
-    answer: "We ensure success through meticulous planning, clear communication, and agile execution methodologies that adapt to your specific needs."
+    question: "Do you provide both design and construction services?",
+    answer: "Yes, we offer end-to-end design and build solutions, including architectural planning, structural design, interior finishing, and on-site construction ensuring a smooth, integrated process from concept to completion."
   },
   {
-    question: "How long will it take to complete my project?",
-    answer: "Timeline varies by complexity. A standard project might take 4-8 weeks, while enterprise solutions can take 3-6 months. We provide a detailed timeline upfront."
+    question: "Can you work with my existing architect or designer?",
+    answer: "Absolutely. We regularly collaborate with external architects and designers to bring their visions to life, providing our construction expertise to ensure feasibility and quality."
   },
   {
-    question: "Can I track the progress of my project?",
-    answer: "Absolutely. We provide weekly reports and access to our project management dashboard so you can monitor real-time progress."
+    question: "How do you estimate the total project cost?",
+    answer: "Our estimation process involves a detailed analysis of materials, labor, site conditions, and timeline. We provide transparent, itemized quotes so you know exactly where your investment goes."
+  },
+  {
+    question: "What materials do you typically use for construction?",
+    answer: "We source high-quality, sustainable materials tailored to project needs, ranging from reinforced concrete and structural steel to eco-friendly timber and advanced composites."
+  },
+  {
+    question: "Can you handle renovation or remodeling projects?",
+    answer: "Yes, our team specializes in complex renovations and remodeling, breathing new life into existing structures while ensuring structural integrity and modern functionality."
   }
 ];
+
+export const CREATIVE_WORKS = [
+    { 
+        id: '01', 
+        title: 'Neon Syntax', 
+        category: 'Brand Identity', 
+        year: '2024',
+        client: 'Future Corp',
+        description: 'We dismantled the traditional corporate identity of Future Corp to rebuild a fluid, living system. The visual language adapts to market data in real-time, creating a brand that never looks the same twice.',
+        image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+        gallery: [
+            'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop'
+        ],
+        tags: ['WebGL', 'Branding', 'Generative Design']
+    },
+    { 
+        id: '02', 
+        title: 'Void Walker', 
+        category: 'Web Experience', 
+        year: '2023',
+        client: 'Nullspace',
+        description: 'A browser-based journey into the void. We utilized three.js and custom shaders to create a weightless e-commerce experience for high-end streetwear.',
+        image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop',
+        gallery: [
+            'https://images.unsplash.com/photo-1504384308090-c54be38558bd?q=80&w=2070&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=2070&auto=format&fit=crop'
+        ],
+        tags: ['Three.js', 'E-Commerce', 'Interaction']
+    },
+    { 
+        id: '03', 
+        title: 'Cyber Pulse', 
+        category: 'Product Design', 
+        year: '2024',
+        client: 'NeuroLink',
+        description: 'Interface design for the next generation of neural interfaces. We focused on high-contrast, data-dense layouts that remain legible at millisecond refresh rates.',
+        image: 'https://images.unsplash.com/photo-1515630278258-407f66498911?q=80&w=1974&auto=format&fit=crop',
+        gallery: [
+            'https://images.unsplash.com/photo-1555664424-778a69022365?q=80&w=2070&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=2070&auto=format&fit=crop'
+        ],
+        tags: ['UI/UX', 'Product', 'System Architecture']
+    },
+    { 
+        id: '04', 
+        title: 'Aether Core', 
+        category: 'Motion Graphics', 
+        year: '2023',
+        client: 'Aether',
+        description: 'A 60-second full CG title sequence for the Aether conference. We simulated fluid dynamics and light refraction to visualize the concept of "Invisible Data".',
+        image: 'https://images.unsplash.com/photo-1534239697880-96c2136e76d9?q=80&w=1968&auto=format&fit=crop',
+        gallery: [
+            'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=1000&auto=format&fit=crop'
+        ],
+        tags: ['Cinema4D', 'Redshift', 'Motion']
+    },
+];
+
+export const CONSTRUCTION_SERVICES = [
+  {
+    id: "01",
+    title: "Interior Detailing",
+    description: "Bespoke interior solutions that blend aesthetic beauty with functional precision.",
+    icon: PaintBucket,
+    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2000&auto=format&fit=crop"
+  },
+  {
+    id: "02",
+    title: "Project Planning",
+    description: "Comprehensive advisory services from feasibility studies to resource allocation.",
+    icon: Layout,
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop"
+  },
+  {
+    id: "03",
+    title: "Urban Development",
+    description: "Large-scale urban planning focused on sustainability and community integration.",
+    icon: Building2,
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2000&auto=format&fit=crop"
+  },
+  {
+    id: "04",
+    title: "Civil Infrastructure",
+    description: "Engineering robust frameworks for bridges, roads, and public facilities.",
+    icon: RulerIcon,
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000&auto=format&fit=crop"
+  }
+];
+
+export const CONSTRUCTION_PROJECTS = [
+  {
+    title: "The Vertex Tower",
+    category: "Commercial",
+    location: "New York, USA",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    title: "Marina Residence",
+    category: "Residential",
+    location: "Dubai, UAE",
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    title: "Eco-Hub Center",
+    category: "Sustainable",
+    location: "Berlin, DE",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    title: "The Onyx Bridge",
+    category: "Infrastructure",
+    location: "London, UK",
+    image: "https://images.unsplash.com/photo-1513828583688-601bf045b432?q=80&w=2070&auto=format&fit=crop"
+  }
+];
+
+export const CONSTRUCTION_PRICING = [
+  {
+    name: "Foundation",
+    price: "$2,900",
+    features: [
+      "Consultation & Site Analysis",
+      "Conceptual 2D Drafting",
+      "Material Estimation",
+      "Permit Assistance"
+    ],
+    highlight: false
+  },
+  {
+    name: "Structure",
+    price: "$5,400",
+    features: [
+      "Consultation & Site Analysis",
+      "Detailed 3D Modeling",
+      "Structural Engineering",
+      "Vendor Management",
+      "Priority Support"
+    ],
+    highlight: true
+  },
+  {
+    name: "Skyline",
+    price: "$8,900",
+    features: [
+      "Full Project Management",
+      "Interior & Exterior Design",
+      "Sustainable Compliance",
+      "Post-Construction Care",
+      "Dedicated Team"
+    ],
+    highlight: false
+  }
+];
+
+export const CONSTRUCTION_TESTIMONIALS = [
+  {
+    text: "Renovex didn't just build a structure; they crafted a landmark. Their attention to detail is unmatched in the industry.",
+    author: "Jonathan Pierce",
+    role: "CEO, Skyline properties",
+    company: "Skyline"
+  },
+  {
+    text: "From the initial blueprint to the final rivet, the process was seamless. A true partnership in every sense of the word.",
+    author: "Amanda Chen",
+    role: "Director of Operations",
+    company: "UrbanFlow"
+  }
+];
+
+export const CONSTRUCTION_BLOGS = [
+  {
+    date: "OCT 24, 2024",
+    title: "Concrete Jungle: The Evolution of Brutalist Architecture",
+    category: "Design",
+    image: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0?q=80&w=2000&auto=format&fit=crop"
+  },
+  {
+    date: "NOV 11, 2024",
+    title: "Sustainable Steel: Reducing Carbon Footprints in Construction",
+    category: "Engineering",
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000&auto=format&fit=crop"
+  },
+  {
+    date: "DEC 05, 2024",
+    title: "Smart Cities: Integrating IoT into Modern Infrastructure",
+    category: "Technology",
+    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2000&auto=format&fit=crop"
+  }
+];
+
+import { Clipboard } from 'lucide-react';
