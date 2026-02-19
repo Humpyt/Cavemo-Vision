@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cavemo - Business Consulting</title>
+    <title>Cavemo - Refined Business Consulting</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,35 +13,39 @@
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #F8FAFC;
+        background-color: #FDFDFD;
+        color: #121212;
+        -webkit-font-smoothing: antialiased;
       }
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Syne', sans-serif;
+        letter-spacing: -0.04em;
       }
       .font-handwriting {
         font-family: 'Caveat', cursive;
       }
-      .text-stroke {
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-        color: transparent;
-      }
-      .text-stroke-dark {
-        -webkit-text-stroke: 1px rgba(15, 23, 42, 0.1);
-        color: transparent;
-      }
       .bg-noise {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
       }
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+      @keyframes reveal {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
-      .animate-float {
-        animation: float 6s ease-in-out infinite;
+      .animate-reveal {
+        animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
-      .animate-float-delayed {
-        animation: float 7s ease-in-out infinite;
-        animation-delay: 2s;
+      .delay-200 { animation-delay: 0.2s; }
+      .delay-400 { animation-delay: 0.4s; }
+      
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #FDFDFD;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #E5E5E5;
+        border-radius: 10px;
       }
     </style>
   <script type="importmap">
