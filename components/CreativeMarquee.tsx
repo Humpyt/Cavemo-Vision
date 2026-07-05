@@ -1,65 +1,64 @@
 
 import React from 'react';
 import { CLIENT_LOGOS } from '../constants';
-import { Star } from 'lucide-react';
+import { Asterisk } from 'lucide-react';
 
 const CreativeMarquee: React.FC = () => {
   return (
-    <section className="bg-[#0a0a0a] py-20 overflow-hidden border-b border-white/5 relative z-10">
+    <section className="bg-[#050505] overflow-hidden relative z-10 py-12 md:py-24">
       
-      {/* Row 1: Kinetic Text */}
-      <div className="flex whitespace-nowrap -rotate-2 scale-110 mb-12">
+      {/* Row 1: Kinetic Text (The Brutalist Neon Tape) */}
+      <div className="flex whitespace-nowrap -rotate-2 scale-[1.05] mb-24 bg-[#CCFF00] py-4 shadow-[0_0_50px_rgba(204,255,0,0.2)]">
         <div className="flex animate-scroll-left">
           {[...Array(8)].map((_, i) => (
             <div key={i} className="flex items-center gap-8 mx-8">
-              <span className="text-8xl font-[Syne] font-extrabold text-transparent text-stroke-dark uppercase opacity-30 hover:opacity-100 hover:text-teal-400 hover:text-stroke-none transition-all duration-300">
-                Disruptive
+              <span className="text-6xl md:text-8xl font-[Syne] font-extrabold text-black uppercase tracking-tighter">
+                REDEFINE
               </span>
-              <Star className="w-8 h-8 text-white/20" />
-              <span className="text-8xl font-[Syne] font-extrabold text-white uppercase">
-                Vision
+              <Asterisk className="w-10 h-10 text-black" />
+              <span className="text-6xl md:text-8xl font-[Syne] font-extrabold text-transparent text-stroke-brutal uppercase">
+                BOUNDARIES
               </span>
-              <Star className="w-8 h-8 text-teal-500" />
+              <Asterisk className="w-10 h-10 text-black" />
             </div>
           ))}
         </div>
         <div className="flex animate-scroll-left" aria-hidden="true">
           {[...Array(8)].map((_, i) => (
             <div key={i} className="flex items-center gap-8 mx-8">
-              <span className="text-8xl font-[Syne] font-extrabold text-transparent text-stroke-dark uppercase opacity-30 hover:opacity-100 hover:text-teal-400 hover:text-stroke-none transition-all duration-300">
-                Disruptive
+              <span className="text-6xl md:text-8xl font-[Syne] font-extrabold text-black uppercase tracking-tighter">
+                REDEFINE
               </span>
-              <Star className="w-8 h-8 text-white/20" />
-              <span className="text-8xl font-[Syne] font-extrabold text-white uppercase">
-                Vision
+              <Asterisk className="w-10 h-10 text-black" />
+              <span className="text-6xl md:text-8xl font-[Syne] font-extrabold text-transparent text-stroke-brutal uppercase">
+                BOUNDARIES
               </span>
-              <Star className="w-8 h-8 text-teal-500" />
+              <Asterisk className="w-10 h-10 text-black" />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Row 2: Logos */}
-      <div className="flex whitespace-nowrap rotate-1 scale-110 border-t border-b border-white/5 py-8 bg-white/5 backdrop-blur-sm">
+      {/* Row 2: Logos (Clean, Monospace vibe) */}
+      <div className="flex whitespace-nowrap border-y border-white/10 py-10 bg-black">
         <div className="flex animate-scroll-right">
            {[...Array(4)].flatMap(() => CLIENT_LOGOS).map((logo, idx) => (
-               <div key={idx} className="mx-12 grayscale brightness-0 invert opacity-50 hover:opacity-100 transition-opacity">
-                   <img src={logo.url} alt={logo.name} className="h-8 w-auto" />
+               <div key={idx} className="mx-16 grayscale brightness-0 invert opacity-40 hover:opacity-100 transition-opacity">
+                   <img src={logo.url} alt={logo.name} className="h-8 w-auto mix-blend-screen" />
                </div>
            ))}
         </div>
         <div className="flex animate-scroll-right" aria-hidden="true">
            {[...Array(4)].flatMap(() => CLIENT_LOGOS).map((logo, idx) => (
-               <div key={idx} className="mx-12 grayscale brightness-0 invert opacity-50 hover:opacity-100 transition-opacity">
-                   <img src={logo.url} alt={logo.name} className="h-8 w-auto" />
+               <div key={idx} className="mx-16 grayscale brightness-0 invert opacity-40 hover:opacity-100 transition-opacity">
+                   <img src={logo.url} alt={logo.name} className="h-8 w-auto mix-blend-screen" />
                </div>
            ))}
         </div>
       </div>
 
       <style>{`
-        .text-stroke-dark { -webkit-text-stroke: 2px rgba(255,255,255,0.1); }
-        .text-stroke-none { -webkit-text-stroke: 0; }
+        .text-stroke-brutal { -webkit-text-stroke: 2px #000000; }
         .animate-scroll-left { animation: scrollLeft 30s linear infinite; }
         .animate-scroll-right { animation: scrollRight 30s linear infinite; }
         @keyframes scrollLeft { from { transform: translateX(0); } to { transform: translateX(-100%); } }

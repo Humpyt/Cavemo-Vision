@@ -38,6 +38,9 @@ import ConstructionImpact from './components/ConstructionImpact';
 import ConstructionPricing from './components/ConstructionPricing';
 import ConstructionFaq from './components/ConstructionFaq';
 import ConstructionFooter from './components/ConstructionFooter';
+import ConstructionBlueprint from './components/ConstructionBlueprint';
+import ConstructionTimeline from './components/ConstructionTimeline';
+import ConstructionSafety from './components/ConstructionSafety';
 
 // Modern Corporate (Bexon) Components
 import CorporateHero from './components/CorporateHero';
@@ -111,11 +114,98 @@ import EmpowerServicesPage from './pages/services/EmpowerServicesPage';
 import ExecutiveServicesPage from './pages/services/ExecutiveServicesPage';
 import LightServicesPage from './pages/services/LightServicesPage';
 
-type AppVariant = 'classic' | 'creative' | 'construction' | 'corporate' | 'modern' | 'home6' | 'home7' | 'home8' | 'home9';
-type ViewPage = 'home' | 'about' | 'about2' | 'history' | 'team' | 'team-details' | 'careers' | 'careers-details' | 'news' | 'pricing' | 'feedback' | 'faq' | 'contact' | 'srv-classic' | 'srv-creative' | 'srv-construction' | 'srv-empower' | 'srv-executive' | 'srv-light';
+// Software Components
+import SoftwareHero from './components/SoftwareHero';
+import SoftwareLogos from './components/SoftwareLogos';
+import SoftwareTechStack from './components/SoftwareTechStack';
+import SoftwareServices from './components/SoftwareServices';
+import SoftwareProcess from './components/SoftwareProcess';
+import SoftwareAbout from './components/SoftwareAbout';
+import SoftwareProjects from './components/SoftwareProjects';
+import SoftwareTeam from './components/SoftwareTeam';
+import SoftwareImpact from './components/SoftwareImpact';
+import SoftwarePricing from './components/SoftwarePricing';
+import SoftwareFaq from './components/SoftwareFaq';
+import SoftwareFooter from './components/SoftwareFooter';
+import CreativePortfolioPage from './pages/CreativePortfolioPage';
+import CorporatePortfolioPage from './pages/CorporatePortfolioPage';
+import SoftwarePortfolioPage from './pages/SoftwarePortfolioPage';
+import ConstructionPortfolioPage from './pages/ConstructionPortfolioPage';
+import CreativeBlogPage from './pages/CreativeBlogPage';
+import CorporateBlogPage from './pages/CorporateBlogPage';
+import SoftwareBlogPage from './pages/SoftwareBlogPage';
+import ConstructionBlogPage from './pages/ConstructionBlogPage';
+
+import Classic2Hero from './components/Classic2Hero';
+import Classic2Features from './components/Classic2Features';
+import Classic2About from './components/Classic2About';
+import Classic2Services from './components/Classic2Services';
+import Classic2Metrics from './components/Classic2Metrics';
+import Classic2Projects from './components/Classic2Projects';
+import Classic2Process from './components/Classic2Process';
+import Classic2Testimonials from './components/Classic2Testimonials';
+import Classic2News from './components/Classic2News';
+import Classic2Team from './components/Classic2Team';
+import Classic2FAQ from './components/Classic2FAQ';
+import Classic2CTA from './components/Classic2CTA';
+
+import Classic3Hero from './components/Classic3Hero';
+import Classic3Logos from './components/Classic3Logos';
+import Classic3About from './components/Classic3About';
+import Classic3Features from './components/Classic3Features';
+import Classic3Services from './components/Classic3Services';
+import Classic3Metrics from './components/Classic3Metrics';
+import Classic3Projects from './components/Classic3Projects';
+import Classic3Process from './components/Classic3Process';
+import Classic3Testimonials from './components/Classic3Testimonials';
+import Classic3Team from './components/Classic3Team';
+import Classic3FAQ from './components/Classic3FAQ';
+import Classic3CTA from './components/Classic3CTA';
+
+import Classic4Hero from './components/Classic4Hero';
+import Classic4Logos from './components/Classic4Logos';
+import Classic4About from './components/Classic4About';
+import Classic4Features from './components/Classic4Features';
+import Classic4Services from './components/Classic4Services';
+import Classic4Process from './components/Classic4Process';
+import Classic4Metrics from './components/Classic4Metrics';
+import Classic4Projects from './components/Classic4Projects';
+import Classic4Testimonials from './components/Classic4Testimonials';
+import Classic4Team from './components/Classic4Team';
+import Classic4News from './components/Classic4News';
+import Classic4CTA from './components/Classic4CTA';
+
+import Classic5Hero from './components/Classic5Hero';
+import Classic5Logos from './components/Classic5Logos';
+import Classic5Manifesto from './components/Classic5Manifesto';
+import Classic5Features from './components/Classic5Features';
+import Classic5Services from './components/Classic5Services';
+import Classic5Metrics from './components/Classic5Metrics';
+import Classic5Projects from './components/Classic5Projects';
+import Classic5Process from './components/Classic5Process';
+import Classic5Testimonials from './components/Classic5Testimonials';
+import Classic5Team from './components/Classic5Team';
+import Classic5News from './components/Classic5News';
+import Classic5CTA from './components/Classic5CTA';
+
+import Classic6Hero from './components/Classic6Hero';
+import Classic6Logos from './components/Classic6Logos';
+import Classic6Manifesto from './components/Classic6Manifesto';
+import Classic6Features from './components/Classic6Features';
+import Classic6Services from './components/Classic6Services';
+import Classic6Metrics from './components/Classic6Metrics';
+import Classic6Projects from './components/Classic6Projects';
+import Classic6Process from './components/Classic6Process';
+import Classic6Testimonials from './components/Classic6Testimonials';
+import Classic6Team from './components/Classic6Team';
+import Classic6News from './components/Classic6News';
+import Classic6CTA from './components/Classic6CTA';
+
+type AppVariant = 'classic' | 'classic2' | 'classic3' | 'classic4' | 'classic5' | 'classic6' | 'creative' | 'construction' | 'corporate' | 'modern' | 'home6' | 'home7' | 'home8' | 'home9' | 'software';
+type ViewPage = 'home' | 'about' | 'about2' | 'history' | 'team' | 'team-details' | 'careers' | 'careers-details' | 'news' | 'pricing' | 'feedback' | 'faq' | 'contact' | 'srv-classic' | 'srv-creative' | 'srv-construction' | 'srv-empower' | 'srv-executive' | 'srv-light' | 'port-creative' | 'port-corporate' | 'port-software' | 'port-construction' | 'blog-creative' | 'blog-corporate' | 'blog-software' | 'blog-construction';
 
 function App() {
-  const [heroVariant, setHeroVariant] = useState<AppVariant>('home9');
+  const [heroVariant, setHeroVariant] = useState<AppVariant>('classic6');
   const [currentView, setCurrentView] = useState<ViewPage>('home');
   const [selectedWorkId, setSelectedWorkId] = useState<string | null>(null);
 
@@ -131,6 +221,16 @@ function App() {
   };
 
   const renderContent = () => {
+      if (currentView === 'blog-creative') return <CreativeBlogPage onHomeClick={() => navigateTo('home')} onPageChange={navigateTo} onVariantChange={handleVariantChange} />;
+      if (currentView === 'blog-corporate') return <CorporateBlogPage onHomeClick={() => navigateTo('home')} onPageChange={navigateTo} onVariantChange={handleVariantChange} />;
+      if (currentView === 'blog-software') return <SoftwareBlogPage onHomeClick={() => navigateTo('home')} onPageChange={navigateTo} onVariantChange={handleVariantChange} />;
+      if (currentView === 'blog-construction') return <ConstructionBlogPage onHomeClick={() => navigateTo('home')} onPageChange={navigateTo} onVariantChange={handleVariantChange} />;
+      
+      if (currentView === 'port-creative') return <CreativePortfolioPage onHomeClick={() => navigateTo('home')} onPageChange={navigateTo} onVariantChange={handleVariantChange} />;
+      if (currentView === 'port-corporate') return <CorporatePortfolioPage onHomeClick={() => navigateTo('home')} onPageChange={navigateTo} onVariantChange={handleVariantChange} />;
+      if (currentView === 'port-software') return <SoftwarePortfolioPage onHomeClick={() => navigateTo('home')} onPageChange={navigateTo} onVariantChange={handleVariantChange} />;
+      if (currentView === 'port-construction') return <ConstructionPortfolioPage onHomeClick={() => navigateTo('home')} onPageChange={navigateTo} onVariantChange={handleVariantChange} />;
+      
       if (currentView === 'about') return <AboutPage onHomeClick={() => navigateTo('home')} />;
       if (currentView === 'about2') return <AboutPage2 onHomeClick={() => navigateTo('home')} />;
       if (currentView === 'history') return <HistoryPage onHomeClick={() => navigateTo('home')} />;
@@ -152,6 +252,106 @@ function App() {
       if (currentView === 'srv-executive') return <ExecutiveServicesPage onBack={() => navigateTo('home')} />;
       if (currentView === 'srv-light') return <LightServicesPage onBack={() => navigateTo('home')} />;
 
+      if (heroVariant === 'classic6') {
+          return (
+              <div className="bg-[#FAFAFA] text-[#050505] border-x-hidden font-sans">
+                  <div className="animate-fade-in transition-all duration-700"><Classic6Hero /></div>
+                  <Classic6Logos />
+                  <Classic6Manifesto />
+                  <Classic6Features />
+                  <Classic6Services />
+                  <Classic6Metrics />
+                  <Classic6Projects />
+                  <Classic6Process />
+                  <Classic6Testimonials />
+                  <Classic6Team />
+                  <Classic6News />
+                  <Classic6CTA />
+                  <CorporateFooter />
+              </div>
+          );
+      }
+
+      if (heroVariant === 'classic5') {
+          return (
+              <div className="bg-[#fcfbf7] text-[#0b1215] border-x-hidden font-sans">
+                  <div className="animate-fade-in transition-all duration-700"><Classic5Hero /></div>
+                  <Classic5Logos />
+                  <Classic5Manifesto />
+                  <Classic5Features />
+                  <Classic5Services />
+                  <Classic5Metrics />
+                  <Classic5Projects />
+                  <Classic5Process />
+                  <Classic5Testimonials />
+                  <Classic5Team />
+                  <Classic5News />
+                  <Classic5CTA />
+                  <CorporateFooter />
+              </div>
+          );
+      }
+
+      if (heroVariant === 'classic4') {
+          return (
+              <div className="bg-white text-slate-900 border-x-hidden font-sans">
+                  <div className="animate-fade-in transition-all duration-700"><Classic4Hero /></div>
+                  <Classic4Logos />
+                  <Classic4About />
+                  <Classic4Features />
+                  <Classic4Services />
+                  <Classic4Process />
+                  <Classic4Metrics />
+                  <Classic4Projects />
+                  <Classic4Testimonials />
+                  <Classic4Team />
+                  <Classic4News />
+                  <Classic4CTA />
+                  <CorporateFooter />
+              </div>
+          );
+      }
+
+      if (heroVariant === 'classic3') {
+          return (
+              <div className="bg-white text-slate-900 border-x-hidden font-sans">
+                  <div className="animate-fade-in transition-all duration-700"><Classic3Hero /></div>
+                  <Classic3Logos />
+                  <Classic3About />
+                  <Classic3Features />
+                  <Classic3Services />
+                  <Classic3Metrics />
+                  <Classic3Projects />
+                  <Classic3Process />
+                  <Classic3Testimonials />
+                  <Classic3Team />
+                  <Classic3FAQ />
+                  <Classic3CTA />
+                  <CorporateFooter />
+              </div>
+          );
+      }
+
+      if (heroVariant === 'classic2') {
+          return (
+              <div className="bg-white text-slate-900 border-x-hidden font-sans">
+                  <div className="animate-fade-in transition-all duration-700"><Classic2Hero /></div>
+                  <Classic2Features />
+                  <Classic2Services />
+                  <Classic2About />
+                  <Classic2Metrics />
+                  <Classic2Projects />
+                  <Classic2Process />
+                  <Classic2Testimonials />
+                  <Classic2News />
+                  <Classic2Team />
+                  <Classic2FAQ />
+                  <Classic2CTA />
+                  <CorporateFooter />
+              </div>
+          );
+      }
+
       if (heroVariant === 'creative') {
           if (selectedWorkId) {
               return <WorkDetails id={selectedWorkId} onBack={() => setSelectedWorkId(null)} />;
@@ -159,19 +359,31 @@ function App() {
           return (
             <>
                 <div className="animate-fade-in transition-all duration-700"><HeroCreative /></div>
-                <CreativeMarquee /><CreativeAbout /><CreativeWork onProjectSelect={setSelectedWorkId} />
-                <CreativeLab /><Process /><CreativeServices /><CreativeTeam /><CreativeReviews /><CreativeFooter />
+                <CreativeMarquee /><CreativeAbout /><CreativeServices /><CreativeWork onProjectSelect={setSelectedWorkId} />
+                <CreativeLab /><CreativeTeam /><CreativeReviews /><CreativeFooter />
             </>
           );
       }
 
       if (heroVariant === 'construction') {
           return (
-              <>
+              <div className="bg-[#0a0a0a] text-white">
                 <div className="animate-fade-in transition-all duration-700"><ConstructionHero /></div>
-                <ConstructionFeatures /><LogoMarquee /><ConstructionAbout /><ConstructionServices /><ConstructionProjects />
-                <ConstructionProcess /><ConstructionTeam /><ConstructionImpact /><ConstructionPricing /><ConstructionFaq /><ConstructionFooter />
-              </>
+                <ConstructionFeatures />
+                <ConstructionBlueprint />
+                <LogoMarquee />
+                <ConstructionAbout />
+                <ConstructionTimeline />
+                <ConstructionServices />
+                <ConstructionProjects />
+                <ConstructionSafety />
+                <ConstructionProcess />
+                <ConstructionTeam />
+                <ConstructionImpact />
+                <ConstructionPricing />
+                <ConstructionFaq />
+                <ConstructionFooter />
+              </div>
           );
       }
 
@@ -220,11 +432,33 @@ function App() {
           );
       }
 
+      if (heroVariant === 'software') {
+          return (
+              <div className="bg-[#030303] text-slate-200 selection:bg-cyan-500/30 font-sans overflow-x-hidden">
+                  <div className="animate-fade-in"><SoftwareHero /></div>
+                  <SoftwareLogos />
+                  <SoftwareAbout />
+                  <SoftwareProcess />
+                  <SoftwareServices />
+                  <SoftwareProjects />
+                  <SoftwareTeam />
+                  <SoftwareImpact />
+                  <SoftwarePricing />
+                  <SoftwareFaq />
+                  <SoftwareFooter />
+              </div>
+          );
+      }
+
       if (heroVariant === 'home9') {
           return (
-              <div className="bg-white text-slate-900">
+              <div className="bg-[#0A0A0B] text-white selection:bg-teal-500/30 overflow-x-hidden font-sans">
                   <div className="animate-fade-in"><Home9Hero /></div>
-                  <Home9Features /><Home9Marquee /><CreativeLab /><Home9Grid /><CreativeMarquee /><Home8Team /><Home7Testimonials /><CorporateFooter />
+                  <Home9Features />
+                  <Home9Marquee />
+                  <Home9Grid />
+                  <SoftwarePricing />
+                  <CorporateFooter />
               </div>
           );
       }

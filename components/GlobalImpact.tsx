@@ -58,18 +58,32 @@ const GlobalImpact: React.FC = () => {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {IMPACT_STATS.map((stat, idx) => (
+                {IMPACT_STATS.map((stat, idx) => {
+                    const GRADIENTS = [
+                      'from-blue-400 to-indigo-500',
+                      'from-teal-400 to-emerald-500',
+                      'from-orange-400 to-red-500',
+                      'from-purple-400 to-pink-500'
+                    ];
+                    return (
                     <div 
                         key={idx} 
-                        className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl group hover:bg-white/10 transition-colors duration-300"
+                        className="relative bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:bg-white/10 hover:border-teal-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(20,184,166,0.1)] group"
                     >
-                        <div className={`w-12 h-12 rounded-xl bg-slate-900 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${stat.color}`}>
-                            <stat.icon className="w-6 h-6" />
+                        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${GRADIENTS[idx % GRADIENTS.length]} p-0.5 mb-6 shadow-lg`}>
+                            <div className="w-full h-full bg-[#1a1a1a] rounded-xl flex items-center justify-center">
+                                <stat.icon className="w-6 h-6 text-white" />
+                            </div>
                         </div>
-                        <h3 className="text-4xl font-bold text-white mb-2">{stat.value}</h3>
-                        <p className="text-slate-400 font-medium text-sm">{stat.label}</p>
+
+                        <div className="text-4xl font-bold text-white/10 absolute top-4 right-6 select-none font-[Syne]">
+                            0{idx + 1}
+                        </div>
+
+                        <h3 className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</h3>
+                        <h4 className="text-teal-400 text-sm font-bold uppercase tracking-wider">{stat.label}</h4>
                     </div>
-                ))}
+                )})}
             </div>
 
         </div>

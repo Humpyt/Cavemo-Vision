@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowUpRight, Search, Clock, ChevronRight, Share2, Filter, TrendingUp, BookOpen, User } from 'lucide-react';
+import { ArrowUpRight, Search, Clock, ChevronRight, Share2, Filter, TrendingUp, BookOpen, User, Activity } from 'lucide-react';
 
 const ARTICLES = [
     { id: 'SIG_901', date: 'OCT 24, 2024', title: 'The Neural Shift: AI Dismantling Brand Logic.', category: 'INTELLIGENCE', readTime: '5 MIN', author: 'Alex V.', img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200' },
@@ -70,6 +70,25 @@ const NewsPage: React.FC = () => {
                 </div>
             </section>
 
+            {/* NEW SECTION A: TRENDING FREQUENCIES */}
+            <section className="px-6 mb-40">
+                <div className="max-w-[1400px] mx-auto bg-teal-500/5 border border-teal-500/20 rounded-[3rem] p-12 lg:p-20 flex flex-col md:flex-row items-center justify-between gap-12">
+                    <div className="md:w-1/3">
+                        <span className="text-teal-400 font-mono text-[10px] uppercase tracking-widest block mb-4">Signal Density</span>
+                        <h3 className="text-3xl md:text-5xl font-bold font-[Syne] tracking-tighter uppercase mb-6">Trending<br/>Frequencies.</h3>
+                        <p className="text-slate-400 text-sm font-light">The most active sectors of our intelligence grid over the last 72 hours.</p>
+                    </div>
+                    <div className="md:w-2/3 flex flex-wrap gap-4">
+                        {['Neural Integration', 'Web3 Architectures', 'Algorithmic Pricing', 'Zero-Trust Operations', 'Cognitive Branding', 'Automated Workflows'].map((tag, i) => (
+                            <div key={i} className="px-6 py-4 bg-white/5 border border-white/10 rounded-full flex items-center gap-3 hover:bg-teal-500 hover:text-black transition-colors cursor-pointer group">
+                                <Activity className="w-4 h-4 text-teal-500 group-hover:text-black" />
+                                <span className="text-xs font-bold font-mono uppercase tracking-widest">{tag}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* 3. SIGNAL MARQUEE */}
             <div className="bg-white py-10 overflow-hidden mb-40 select-none">
                  <div className="flex whitespace-nowrap animate-marquee">
@@ -116,6 +135,67 @@ const NewsPage: React.FC = () => {
                 </div>
             </section>
 
+            {/* NEW SECTION B: UPCOMING TRANSMISSIONS (Events) */}
+            <section className="px-6 mb-40">
+                <div className="max-w-[1400px] mx-auto">
+                    <div className="mb-16">
+                         <h3 className="text-3xl font-bold font-[Syne] uppercase tracking-widest mb-4">Scheduled Transmissions</h3>
+                         <p className="text-slate-400 font-mono text-xs uppercase tracking-widest">Live Briefings & Webinars</p>
+                    </div>
+                    <div className="grid lg:grid-cols-2 gap-8">
+                        {[
+                            { date: "NOV 28", time: "14:00 UTC", title: "The Post-Human Brand Logic", speaker: "Julian Thorne" },
+                            { date: "DEC 05", time: "09:00 UTC", title: "Algorithmic Market Disruption", speaker: "Elena Rostova" }
+                        ].map((event, i) => (
+                            <div key={i} className="group bg-white/5 border border-white/10 rounded-[2rem] p-8 md:p-12 flex flex-col sm:flex-row gap-8 items-start sm:items-center justify-between hover:bg-white/10 transition-colors">
+                                <div className="flex flex-col">
+                                    <span className="text-4xl font-bold font-[Syne] text-teal-400 mb-2">{event.date}</span>
+                                    <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest flex items-center gap-2"><Clock className="w-3 h-3"/> {event.time}</span>
+                                </div>
+                                <div className="flex-1">
+                                    <h4 className="text-xl font-bold font-[Syne] uppercase mb-3">{event.title}</h4>
+                                    <p className="text-slate-400 text-xs font-mono uppercase tracking-widest">Lead: {event.speaker}</p>
+                                </div>
+                                <button className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-teal-500 group-hover:text-black group-hover:border-teal-500 transition-colors flex-shrink-0">
+                                    <ArrowUpRight className="w-5 h-5" />
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* NEW SECTION C: AUDIO SIGNALS */}
+            <section className="px-6 mb-40">
+                <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-12 items-center">
+                     <div className="lg:col-span-5">
+                         <h3 className="text-4xl md:text-5xl font-bold font-[Syne] tracking-tighter uppercase mb-6">Audio<br/>Telemetry.</h3>
+                         <p className="text-slate-400 text-lg font-light mb-8">Deep-dive auditory analysis of the latest market shifts. Listen to our core architects deconstruct modern problems.</p>
+                         <button className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-[10px] rounded-full hover:bg-teal-500 hover:text-white transition-colors">View All Episodes</button>
+                     </div>
+                     <div className="lg:col-span-7 space-y-4">
+                         {[
+                             { ep: "EP. 42", title: "Death of the Funnel", dur: "45 MIN" },
+                             { ep: "EP. 41", title: "Syntax of Strategy", dur: "38 MIN" },
+                             { ep: "EP. 40", title: "The Efficiency Trap", dur: "52 MIN" }
+                         ].map((ep, i) => (
+                             <div key={i} className="flex items-center justify-between p-6 bg-white/5 border border-white/10 rounded-2xl hover:border-teal-500/50 transition-colors cursor-pointer group">
+                                 <div className="flex items-center gap-6">
+                                     <div className="w-12 h-12 bg-teal-500/10 rounded-full flex items-center justify-center group-hover:bg-teal-500 transition-colors">
+                                         <div className="w-0 h-0 border-t-4 border-t-transparent border-l-6 border-l-teal-500 group-hover:border-l-black border-b-4 border-b-transparent ml-1"></div>
+                                     </div>
+                                     <div>
+                                         <span className="text-[10px] font-mono text-teal-400 mb-1 block">{ep.ep}</span>
+                                         <h4 className="text-sm md:text-base font-bold font-[Syne] uppercase">{ep.title}</h4>
+                                     </div>
+                                 </div>
+                                 <span className="text-[10px] font-mono text-slate-500">{ep.dur}</span>
+                             </div>
+                         ))}
+                     </div>
+                </div>
+            </section>
+
             {/* 5. THE ARCHIVE (TECHNICAL TABLE) */}
             <section className="px-6 py-40 bg-white text-slate-900 rounded-[5rem]">
                 <div className="max-w-[1400px] mx-auto">
@@ -149,6 +229,19 @@ const NewsPage: React.FC = () => {
                                 ))}
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </section>
+
+            {/* NEW SECTION D: SUBSCRIBE CTA */}
+            <section className="px-6 mb-40">
+                <div className="max-w-[1400px] mx-auto bg-teal-500 text-black rounded-[4rem] p-12 md:p-24 text-center">
+                    <span className="font-mono text-[10px] uppercase tracking-widest font-bold mb-6 block">Direct Access</span>
+                    <h2 className="text-5xl md:text-7xl font-bold font-[Syne] tracking-tighter uppercase mb-8">Ingest the<br/>Ledger.</h2>
+                    <p className="text-black/70 max-w-lg mx-auto mb-12 font-medium">Receive our unfiltered logic streams and strategy protocols directly in your inbox every zero-day.</p>
+                    <div className="max-w-md mx-auto relative">
+                        <input type="email" placeholder="ENTER_EMAIL_ADDRESS..." className="w-full bg-black/10 border border-black/20 text-black placeholder:text-black/50 rounded-full px-8 py-5 text-xs font-mono focus:outline-none focus:border-black transition-colors" />
+                        <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-black text-white px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors">Subscribe</button>
                     </div>
                 </div>
             </section>

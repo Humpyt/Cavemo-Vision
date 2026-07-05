@@ -3,30 +3,29 @@ import React from 'react';
 
 const CreativeAbout: React.FC = () => {
   return (
-    <section className="bg-[#0a0a0a] py-32 px-6 md:px-12 flex justify-center items-center min-h-[80vh] relative overflow-hidden">
-        {/* Background Gradients */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-900/10 rounded-full blur-[120px]"></div>
-
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-            <p className="text-teal-500 font-mono text-sm tracking-widest uppercase mb-8">The Manifesto</p>
+    <section className="bg-white text-black pt-32 pb-0 px-4 md:px-8 border-t-[12px] border-black">
+        <div className="max-w-[1600px] mx-auto relative z-10">
+            <p className="font-bold text-[10px] tracking-widest uppercase mb-4 text-[#CCFF00] bg-black inline-block px-4 py-2">Our Manifesto</p>
             
-            <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white leading-tight font-[Syne] mix-blend-difference">
-                WE DON'T FOLLOW <br /> TRENDS. WE <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-purple-500">ENGINEER</span> <br /> THE ANOMALY.
+            <h2 className="text-5xl md:text-[8vw] font-black leading-[0.85] font-[Syne] tracking-tighter uppercase mb-16 md:mb-32">
+                We don't follow trends. We engineer <span className="text-white bg-black px-4 xl:px-8 -rotate-2 inline-block shadow-[8px_8px_0_#CCFF00]">the anomaly.</span>
             </h2>
 
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-left border-t border-white/10 pt-12">
-                <div>
-                    <h3 className="text-white font-bold text-xl mb-4 font-[Syne]">01. Defy Normal</h3>
-                    <p className="text-slate-400 leading-relaxed">Normal is invisible. We build digital experiences that demand attention and refuse to be ignored.</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 border-t-[4px] border-black text-left">
+                <div className="border-r-[4px] border-black p-8 md:p-12 transition-colors hover:bg-black hover:text-white group relative overflow-hidden">
+                    <h3 className="font-mono text-8xl md:text-9xl font-black text-black/10 absolute -top-4 -right-4 group-hover:text-white/10 transition-colors">01</h3>
+                    <h3 className="font-bold text-2xl md:text-3xl mb-6 font-[Syne] uppercase relative z-10 mt-12 group-hover:text-[#CCFF00]">Defy Normal</h3>
+                    <p className="text-black/70 group-hover:text-white/70 leading-relaxed font-medium relative z-10">Normal is invisible. We build digital experiences that demand absolute attention and refuse to be ignored in a crowded market.</p>
                 </div>
-                <div>
-                    <h3 className="text-white font-bold text-xl mb-4 font-[Syne]">02. Data x Chaos</h3>
-                    <p className="text-slate-400 leading-relaxed">We merge cold hard analytics with raw creative chaos to find the sweet spot of innovation.</p>
+                <div className="border-r-[4px] border-black p-8 md:p-12 transition-colors hover:bg-[#CCFF00] group relative overflow-hidden border-t-[4px] md:border-t-0">
+                    <h3 className="font-mono text-8xl md:text-9xl font-black text-black/10 absolute -top-4 -right-4 group-hover:text-black/20 transition-colors">02</h3>
+                    <h3 className="font-bold text-2xl md:text-3xl mb-6 font-[Syne] uppercase relative z-10 mt-12">Data x Chaos</h3>
+                    <p className="text-black/70 group-hover:text-black/80 leading-relaxed font-medium relative z-10">We merge cold hard analytics with raw creative chaos. That intersection is where true brand innovation happens.</p>
                 </div>
-                <div>
-                    <h3 className="text-white font-bold text-xl mb-4 font-[Syne]">03. Future First</h3>
-                    <p className="text-slate-400 leading-relaxed">We design for the internet of tomorrow. If it works on IE11, we probably didn't build it.</p>
+                <div className="p-8 md:p-12 transition-colors hover:bg-black hover:text-white group relative overflow-hidden border-t-[4px] md:border-t-0 border-black">
+                    <h3 className="font-mono text-8xl md:text-9xl font-black text-black/10 absolute -top-4 -right-4 group-hover:text-white/10 transition-colors">03</h3>
+                    <h3 className="font-bold text-2xl md:text-3xl mb-6 font-[Syne] uppercase relative z-10 mt-12 group-hover:text-[#CCFF00]">Future First</h3>
+                    <p className="text-black/70 group-hover:text-white/70 leading-relaxed font-medium relative z-10">We design for the internet of tomorrow. We build with cutting edge tech to ensure your brand sets the standard.</p>
                 </div>
             </div>
         </div>

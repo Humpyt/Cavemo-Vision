@@ -1,76 +1,65 @@
 
 import React from 'react';
-import { Box, Layers, Zap, Hexagon } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const CreativeServices: React.FC = () => {
-  return (
-    <section className="bg-[#050505] py-32 px-4 border-t border-white/5">
-       <div className="max-w-[1400px] mx-auto">
-           <div className="mb-20">
-               <h2 className="text-4xl md:text-6xl font-bold text-white font-[Syne]">
-                   CAPABILITIES
-               </h2>
-           </div>
+    return (
+        <section className="bg-black py-32 md:py-48 px-4 border-t border-white/20">
+            <div className="max-w-[1600px] mx-auto">
+                <h2 className="text-[#CCFF00] font-mono text-sm tracking-widest uppercase mb-12">Core Capabilities</h2>
+                
+                <div className="border-t-[4px] border-white">
+                    {[
+                        { 
+                            id: '01', 
+                            title: 'Brand Archetypes', 
+                            desc: 'We construct fundamental brand narratives that bypass logic and speak directly to cultural instincts.',
+                            tags: ['Strategy', 'Identity', 'Positioning']
+                        },
+                        { 
+                            id: '02', 
+                            title: 'Digital Brutalism', 
+                            desc: 'Raw, unpolished, and highly performant web architectures that command attention.',
+                            tags: ['Web Design', 'UI/UX', 'Interaction']
+                        },
+                        { 
+                            id: '03', 
+                            title: 'Creative Coding', 
+                            desc: 'WebGL, Three.js, and generative algorithms to break the boundaries of the traditional DOM.',
+                            tags: ['React', 'WebGL', 'Shaders']
+                        },
+                    ].map((service) => (
+                        <div key={service.id} className="group border-b-[4px] border-white/20 hover:border-[#CCFF00] transition-colors py-12 md:py-20 flex flex-col lg:flex-row items-start lg:items-center justify-between cursor-pointer">
+                            
+                            <div className="flex flex-col md:flex-row md:items-center gap-12 lg:w-1/2">
+                                <span className="text-6xl md:text-8xl font-black font-mono text-white/20 group-hover:text-[#CCFF00] transition-colors">
+                                    {service.id}
+                                </span>
+                                <h3 className="text-4xl md:text-6xl font-black text-white font-[Syne] uppercase tracking-tighter group-hover:translate-x-4 transition-transform duration-500">
+                                    {service.title}
+                                </h3>
+                            </div>
 
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-               
-               {/* Large Card 1 */}
-               <div className="md:col-span-2 bg-[#0F0F0F] rounded-3xl p-10 border border-white/5 hover:border-teal-500/50 transition-colors group min-h-[400px] relative overflow-hidden flex flex-col justify-between">
-                   <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-[80px] group-hover:bg-teal-500/20 transition-colors"></div>
-                   <div>
-                       <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-teal-400">
-                           <Box className="w-6 h-6" />
-                       </div>
-                       <h3 className="text-3xl font-bold text-white mb-4">Digital Ecosystems</h3>
-                       <p className="text-slate-400 max-w-md">We architect full-scale digital environments. From complex web apps to immersive 3D experiences, we build the infrastructure of your brand's digital existence.</p>
-                   </div>
-                   <div className="flex gap-2 mt-8">
-                       {['React', 'WebGL', 'Node.js', 'AWS'].map(tag => (
-                           <span key={tag} className="px-3 py-1 rounded-full border border-white/10 text-xs text-slate-300">{tag}</span>
-                       ))}
-                   </div>
-               </div>
+                            <div className="lg:w-1/2 mt-12 lg:mt-0 flex flex-col md:flex-row md:items-center justify-between pl-0 lg:pl-20 border-white/20 group-hover:border-[#CCFF00] transition-colors">
+                                <div className="max-w-sm mb-8 md:mb-0">
+                                    <p className="text-white/60 font-medium leading-relaxed mb-4">{service.desc}</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {service.tags.map(tag => (
+                                            <span key={tag} className="text-[#CCFF00] text-xs font-mono border border-[#CCFF00]/30 px-2 py-1 bg-[#CCFF00]/5">{tag}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className="w-16 h-16 rounded-full border-[2px] border-white/20 flex flex-shrink-0 items-center justify-center text-white group-hover:bg-[#CCFF00] group-hover:border-[#CCFF00] group-hover:text-black transition-all transform group-hover:rotate-[-45deg]">
+                                    <ArrowRight className="w-6 h-6" />
+                                </div>
+                            </div>
 
-               {/* Tall Card */}
-               <div className="md:row-span-2 bg-[#0F0F0F] rounded-3xl p-10 border border-white/5 hover:border-purple-500/50 transition-colors group relative overflow-hidden flex flex-col">
-                    <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
-                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-purple-400">
-                       <Zap className="w-6 h-6" />
-                   </div>
-                   <h3 className="text-3xl font-bold text-white mb-4">Brand Velocity</h3>
-                   <p className="text-slate-400 mb-8">Speed is a feature. We optimize not just for load times, but for market impact.</p>
-                   
-                   <div className="mt-auto space-y-4">
-                       {[1,2,3].map((_, i) => (
-                           <div key={i} className="h-2 bg-white/5 rounded-full overflow-hidden">
-                               <div className="h-full bg-purple-500 w-2/3 animate-pulse" style={{width: `${80 + (i*10)}%`}}></div>
-                           </div>
-                       ))}
-                   </div>
-               </div>
-
-               {/* Standard Card 2 */}
-               <div className="bg-[#0F0F0F] rounded-3xl p-10 border border-white/5 hover:border-pink-500/50 transition-colors group">
-                   <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-pink-400">
-                       <Layers className="w-6 h-6" />
-                   </div>
-                   <h3 className="text-2xl font-bold text-white mb-2">UI/UX Design</h3>
-                   <p className="text-slate-400 text-sm">Interfaces that feel inevitable. Intuitive, fluid, and beautiful.</p>
-               </div>
-
-               {/* Standard Card 3 */}
-               <div className="bg-[#0F0F0F] rounded-3xl p-10 border border-white/5 hover:border-blue-500/50 transition-colors group">
-                   <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-blue-400">
-                       <Hexagon className="w-6 h-6" />
-                   </div>
-                   <h3 className="text-2xl font-bold text-white mb-2">3D & Motion</h3>
-                   <p className="text-slate-400 text-sm">Adding depth to the flat web. WebGL, Three.js, and kinetic typography.</p>
-               </div>
-
-           </div>
-       </div>
-    </section>
-  );
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default CreativeServices;

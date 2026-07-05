@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import { Scan, Box, Truck, HardHat, Flag, Crosshair, ChevronRight, Activity, Terminal } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Scan, Box, Truck, HardHat, Flag, Crosshair, ChevronRight, Activity, Terminal, Cpu } from 'lucide-react';
 
 const PHASES = [
   {
@@ -54,137 +55,168 @@ const ConstructionProcess: React.FC = () => {
   const [activePhase, setActivePhase] = useState(0);
 
   return (
-    <section className="bg-[#111] py-24 md:py-32 px-4 relative overflow-hidden border-t border-white/5">
+    <section className="bg-[#050505] py-32 px-4 relative overflow-hidden border-t border-white/5">
         
         {/* Background Tech Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
         <div className="max-w-[1600px] mx-auto relative z-10">
             
             {/* Header / Console Top */}
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-white/10 pb-8">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-white/5 pb-12">
                 <div>
-                    <div className="flex items-center gap-2 text-yellow-500 mb-4 animate-pulse">
-                        <Terminal className="w-4 h-4" />
-                        <span className="font-mono text-xs tracking-widest uppercase">System Protocol_v4.5</span>
+                    <div className="flex items-center gap-3 text-yellow-500 mb-6">
+                        <Terminal className="w-5 h-5 animate-pulse" />
+                        <span className="font-mono text-[10px] tracking-[0.3em] uppercase">Execution Protocol_v9.2</span>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-bold text-white font-[Manrope] tracking-tight">
-                        EXECUTION <span className="text-stroke-white text-transparent">LOGIC</span>
+                    <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter">
+                        CONSTRUCTION <span className="text-white/20 italic">LOGIC.</span>
                     </h2>
                 </div>
-                <div className="hidden md:flex gap-8 text-right">
-                    <div>
-                        <span className="block text-slate-500 text-[10px] font-mono uppercase tracking-widest">Active Thread</span>
-                        <span className="block text-white font-mono">PROCESS_MAIN</span>
+                <div className="hidden md:flex gap-12 text-right">
+                    <div className="flex flex-col items-end">
+                        <span className="text-white/20 text-[10px] font-mono uppercase tracking-widest mb-1">Active Thread</span>
+                        <div className="flex items-center gap-2">
+                          <Cpu className="w-3 h-3 text-yellow-500" />
+                          <span className="text-white font-mono text-sm">PROCESS_MAIN</span>
+                        </div>
                     </div>
-                    <div>
-                        <span className="block text-slate-500 text-[10px] font-mono uppercase tracking-widest">Uptime</span>
-                        <span className="block text-yellow-500 font-mono">99.9%</span>
+                    <div className="flex flex-col items-end">
+                        <span className="text-white/20 text-[10px] font-mono uppercase tracking-widest mb-1">System Uptime</span>
+                        <span className="text-yellow-500 font-mono text-sm">99.99%</span>
                     </div>
                 </div>
             </div>
 
             {/* Main Interface Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-auto lg:h-[700px]">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 
                 {/* Left Column: Command List */}
-                <div className="lg:col-span-4 flex flex-col gap-2 h-full overflow-y-auto pr-2 custom-scrollbar">
+                <div className="lg:col-span-4 flex flex-col gap-3">
                     {PHASES.map((phase, idx) => (
-                        <div 
+                        <motion.div 
                             key={idx}
                             onMouseEnter={() => setActivePhase(idx)}
-                            className={`group cursor-pointer relative p-6 border transition-all duration-300 ${
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1 }}
+                            className={`group cursor-pointer relative p-8 rounded-2xl border transition-all duration-500 ${
                                 activePhase === idx 
-                                ? 'bg-yellow-500 border-yellow-500' 
-                                : 'bg-[#1a1a1a] border-white/5 hover:border-white/20'
+                                ? 'bg-yellow-500 border-yellow-500 shadow-[0_0_30px_rgba(234,179,8,0.2)]' 
+                                : 'bg-white/5 border-white/5 hover:border-white/20'
                             }`}
                         >
-                            <div className="flex justify-between items-start mb-2">
-                                <span className={`font-mono text-sm font-bold tracking-widest ${
+                            <div className="flex justify-between items-start mb-4">
+                                <span className={`font-mono text-xs font-bold tracking-widest ${
                                     activePhase === idx ? 'text-black' : 'text-yellow-600'
                                 }`}>
-                                    {phase.id} //
+                                    PHASE_0{idx + 1}
                                 </span>
                                 {activePhase === idx && <Activity className="w-4 h-4 text-black animate-pulse" />}
                             </div>
                             
-                            <h3 className={`text-xl font-bold font-[Manrope] mb-1 ${
+                            <h3 className={`text-2xl font-bold tracking-tight mb-2 transition-colors ${
                                 activePhase === idx ? 'text-black' : 'text-white'
                             }`}>
                                 {phase.title}
                             </h3>
-                            <p className={`text-xs uppercase tracking-wide ${
-                                activePhase === idx ? 'text-black/70' : 'text-slate-500'
+                            <p className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${
+                                activePhase === idx ? 'text-black/60' : 'text-white/30'
                             }`}>
                                 {phase.subtitle}
                             </p>
-
-                            {/* Corner Decors */}
-                            <div className={`absolute top-0 left-0 w-2 h-2 border-t border-l transition-colors ${activePhase === idx ? 'border-black' : 'border-white/20'}`}></div>
-                            <div className={`absolute bottom-0 right-0 w-2 h-2 border-b border-r transition-colors ${activePhase === idx ? 'border-black' : 'border-white/20'}`}></div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
                 {/* Right Column: Visual Viewport */}
-                <div className="lg:col-span-8 relative bg-[#050505] border border-white/10 p-1 flex flex-col">
+                <div className="lg:col-span-8 relative bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] overflow-hidden group">
                     
                     {/* Viewport Toolbar */}
-                    <div className="bg-[#111] border-b border-white/10 px-4 py-2 flex justify-between items-center text-[10px] font-mono text-slate-400 uppercase tracking-widest">
-                        <div className="flex gap-4">
-                            <span>CAM_0{activePhase + 1}</span>
-                            <span>Scale: 1:100</span>
+                    <div className="bg-white/5 border-b border-white/5 px-8 py-4 flex justify-between items-center text-[10px] font-mono text-white/30 uppercase tracking-widest">
+                        <div className="flex gap-8">
+                            <span className="flex items-center gap-2">
+                              <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                              CAM_0{activePhase + 1}
+                            </span>
+                            <span>Scale: 1:250</span>
                         </div>
-                        <div className="flex gap-2">
-                            <span>[ REC ]</span>
-                            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                        <div className="flex items-center gap-4">
+                            <span className="text-rose-500 animate-pulse">[ LIVE FEED ]</span>
+                            <div className="w-px h-3 bg-white/10"></div>
+                            <span>FPS: 60.0</span>
                         </div>
                     </div>
 
                     {/* Main Image Container */}
-                    <div className="relative flex-grow overflow-hidden group">
-                        {/* Image */}
-                        <img 
-                            src={PHASES[activePhase].image} 
-                            alt={PHASES[activePhase].title} 
-                            className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
-                        />
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={activePhase}
+                            initial={{ opacity: 0, scale: 1.1 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 1.05 }}
+                            transition={{ duration: 0.8 }}
+                            className="absolute inset-0"
+                          >
+                            <img 
+                                src={PHASES[activePhase].image} 
+                                alt={PHASES[activePhase].title} 
+                                className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700"
+                                referrerPolicy="no-referrer"
+                            />
+                          </motion.div>
+                        </AnimatePresence>
                         
                         {/* Digital Overlay */}
-                        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0)_50%,rgba(0,0,0,0.2)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_4px,3px_100%] pointer-events-none z-10"></div>
+                        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0)_50%,rgba(0,0,0,0.1)_50%)] bg-[size:100%_4px] pointer-events-none z-10"></div>
                         
                         {/* Animated Scan Line */}
-                        <div className="absolute top-0 left-0 w-full h-1 bg-yellow-500/50 shadow-[0_0_20px_rgba(234,179,8,0.5)] animate-scan pointer-events-none z-20"></div>
+                        <motion.div 
+                          animate={{ top: ['0%', '100%'] }}
+                          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                          className="absolute left-0 w-full h-px bg-yellow-500/30 shadow-[0_0_10px_rgba(234,179,8,0.3)] pointer-events-none z-20"
+                        />
 
                         {/* Floating Info Box */}
-                        <div className="absolute bottom-8 left-8 z-30 max-w-md">
-                            <div className="bg-black/80 backdrop-blur-md border border-white/10 p-6 border-l-4 border-l-yellow-500">
-                                <h4 className="text-white font-bold text-2xl mb-2 font-[Manrope]">{PHASES[activePhase].title}</h4>
-                                <p className="text-slate-300 text-sm leading-relaxed mb-4">{PHASES[activePhase].desc}</p>
+                        <div className="absolute bottom-10 left-10 z-30 max-w-lg">
+                            <motion.div 
+                              key={activePhase}
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              className="bg-black/80 backdrop-blur-2xl border border-white/10 p-8 rounded-3xl border-l-4 border-l-yellow-500 shadow-2xl"
+                            >
+                                <h4 className="text-white font-bold text-3xl mb-4 tracking-tight">{PHASES[activePhase].title}</h4>
+                                <p className="text-white/50 text-base leading-relaxed mb-8">{PHASES[activePhase].desc}</p>
                                 
-                                <div className="grid grid-cols-3 gap-2">
+                                <div className="grid grid-cols-3 gap-3">
                                     {PHASES[activePhase].stats.map((stat, i) => (
-                                        <div key={i} className="bg-white/5 p-2 text-center border border-white/5">
-                                            <span className="text-[10px] font-mono text-yellow-500 block uppercase tracking-tighter">{stat}</span>
+                                        <div key={i} className="bg-white/5 p-3 rounded-xl border border-white/5 text-center">
+                                            <span className="text-[10px] font-mono text-yellow-500 block uppercase tracking-tighter font-bold">{stat}</span>
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
 
                         {/* Crosshairs */}
-                        <div className="absolute top-8 left-8 text-white/30"><Crosshair className="w-6 h-6" /></div>
-                        <div className="absolute top-8 right-8 text-white/30"><Crosshair className="w-6 h-6" /></div>
-                        <div className="absolute bottom-8 right-8 text-white/30"><Crosshair className="w-6 h-6" /></div>
+                        <div className="absolute top-10 left-10 text-white/10"><Crosshair className="w-8 h-8" /></div>
+                        <div className="absolute top-10 right-10 text-white/10"><Crosshair className="w-8 h-8" /></div>
+                        <div className="absolute bottom-10 right-10 text-white/10"><Crosshair className="w-8 h-8" /></div>
                     </div>
 
                 </div>
             </div>
 
             {/* Bottom Status Bar */}
-            <div className="mt-4 flex justify-between items-center border-t border-white/10 pt-4 text-[10px] font-mono text-slate-600 uppercase tracking-widest">
-                <div>System_Ready</div>
-                <div className="flex gap-4">
+            <div className="mt-12 flex justify-between items-center border-t border-white/5 pt-8 text-[10px] font-mono text-white/20 uppercase tracking-[0.3em]">
+                <div className="flex items-center gap-4">
+                  <span className="text-emerald-500">SYSTEM_READY</span>
+                  <span className="text-white/10">|</span>
+                  <span>BUFFER: 100%</span>
+                </div>
+                <div className="flex gap-8">
                     <span>X: 402.19</span>
                     <span>Y: 881.02</span>
                     <span>Z: 10.00</span>
@@ -192,20 +224,6 @@ const ConstructionProcess: React.FC = () => {
             </div>
 
         </div>
-
-        <style>{`
-            .text-stroke-white { -webkit-text-stroke: 1px white; color: transparent; }
-            @keyframes scan {
-                0% { top: 0%; opacity: 0; }
-                10% { opacity: 1; }
-                90% { opacity: 1; }
-                100% { top: 100%; opacity: 0; }
-            }
-            .animate-scan { animation: scan 4s linear infinite; }
-            .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-            .custom-scrollbar::-webkit-scrollbar-track { bg: #1a1a1a; }
-            .custom-scrollbar::-webkit-scrollbar-thumb { bg: #333; }
-        `}</style>
     </section>
   );
 };

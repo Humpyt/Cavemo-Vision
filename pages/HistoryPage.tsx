@@ -133,6 +133,83 @@ const HistoryPage: React.FC<HistoryPageProps> = ({ onHomeClick }) => {
                 ))}
             </section>
 
+            {/* NEW SECTION A: KEY ACHIEVEMENTS MATRIX */}
+            <section className="py-32 px-6 max-w-[1400px] mx-auto">
+                <div className="mb-16">
+                     <span className="text-teal-500 font-bold uppercase tracking-[0.4em] text-[10px] mb-4 block">QUANTITATIVE GROWTH</span>
+                     <h2 className="text-4xl md:text-6xl font-bold font-[Syne] tracking-tighter">THE IMPACT MATRIX.</h2>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {[
+                        { label: "Global Projects", value: "2,400+" },
+                        { label: "Lines of Code (Core)", value: "14.2M" },
+                        { label: "Strategic Pivots", value: "850+" },
+                        { label: "Industry Awards", value: "112" }
+                    ].map((stat, i) => (
+                        <div key={i} className="bg-white/5 border border-white/10 p-8 rounded-[2rem] text-center hover:bg-white/10 transition-colors">
+                            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold font-[Syne] text-teal-400 mb-4">{stat.value}</h3>
+                            <p className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">{stat.label}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* NEW SECTION B: GEOGRAPHICAL FOOTPRINT */}
+            <section className="py-32 bg-[#0A0A0B] border-y border-white/5 relative overflow-hidden">
+                <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-20 items-center">
+                         <div>
+                             <span className="text-teal-500 font-bold uppercase tracking-[0.4em] text-[10px] mb-4 block">GLOBAL EXPANSION</span>
+                             <h2 className="text-4xl md:text-6xl font-bold font-[Syne] tracking-tighter mb-8">NODE ACTIVATION.</h2>
+                             <p className="text-slate-400 text-lg leading-relaxed font-light mb-12">From a single desk in Brooklyn to a decentralized network of strategic nodes. Our expansion wasn't just growth; it was a methodical deployment of logic hubs worldwide.</p>
+                             <div className="space-y-6">
+                                 {[
+                                     { year: "2010", loc: "Brooklyn, NY - Alpha Node" },
+                                     { year: "2014", loc: "London, UK - EU Gateway" },
+                                     { year: "2018", loc: "Singapore - APAC Core" },
+                                     { year: "2023", loc: "Dubai, UAE - MENA Hub" }
+                                 ].map((node, i) => (
+                                     <div key={i} className="flex items-center gap-6 border-b border-white/10 pb-6 group">
+                                         <span className="font-mono text-teal-400 text-sm">{node.year}</span>
+                                         <span className="text-white font-[Syne] uppercase tracking-widest group-hover:text-teal-300 transition-colors">{node.loc}</span>
+                                     </div>
+                                 ))}
+                             </div>
+                         </div>
+                         <div className="aspect-square bg-slate-900 rounded-[3rem] p-4 relative border border-white/10">
+                             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 rounded-[3rem]"></div>
+                             <div className="w-full h-full border border-white/10 rounded-[2.5rem] flex items-center justify-center relative overflow-hidden">
+                                  {/* Abstract map representation */}
+                                  <Globe className="w-48 h-48 text-white/5 absolute" />
+                                  <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-teal-500 rounded-full animate-ping"></div>
+                                  <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-teal-500 rounded-full animate-ping delay-300"></div>
+                                  <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-teal-500 rounded-full animate-ping delay-700"></div>
+                                  <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-teal-500 rounded-full animate-ping delay-1000"></div>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* NEW SECTION C: EVOLUTION OF PHILOSOPHY */}
+            <section className="py-32 px-6 max-w-[1400px] mx-auto text-center">
+                <span className="text-teal-500 font-bold uppercase tracking-[0.4em] text-[10px] mb-4 block">PARADIGM SHIFTS</span>
+                <h2 className="text-4xl md:text-6xl font-bold font-[Syne] tracking-tighter mb-16">EVOLUTION OF LOGIC.</h2>
+                <div className="grid md:grid-cols-3 gap-8 text-left">
+                    {[
+                        { era: "v1.0", title: "Data over Intuition", desc: "Our earliest mandate. We refused projects that couldn't be mathematically justified." },
+                        { era: "v2.0", title: "Systems over Campaigns", desc: "We stopped making ads and started building autonomous growth engines." },
+                        { era: "v3.0", title: "AI as a Partner", desc: "The current state. Integrating artificial intelligence not as a tool, but as a core architect." }
+                    ].map((phil, i) => (
+                        <div key={i} className="bg-white/5 border border-white/10 rounded-[2rem] p-10 hover:border-teal-500/30 transition-all duration-500 group">
+                            <span className="text-teal-500 font-mono text-xs mb-6 block">{phil.era}</span>
+                            <h3 className="text-2xl font-bold font-[Syne] uppercase mb-4 group-hover:text-teal-400 transition-colors">{phil.title}</h3>
+                            <p className="text-slate-400 font-light leading-relaxed">{phil.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
             {/* 3. FOUNDERS' ARCHIVE (THE LEDGER) */}
             <section className="py-40 bg-white text-slate-900 rounded-t-[5rem] relative z-20">
                 <div className="max-w-[1400px] mx-auto px-6">

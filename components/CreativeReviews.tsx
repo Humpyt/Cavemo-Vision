@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Quote, Star } from 'lucide-react';
+import { Quote } from 'lucide-react';
 
 const REVIEWS = [
     {
@@ -25,44 +25,35 @@ const REVIEWS = [
 
 const CreativeReviews: React.FC = () => {
   return (
-    <section className="bg-[#050505] py-32 px-4 border-t border-white/5">
-        <div className="max-w-[1400px] mx-auto">
-            <div className="flex items-center justify-between mb-20">
-                <h2 className="text-4xl font-bold text-white font-[Syne] uppercase">
-                    Signal / Noise
+    <section className="bg-white py-32 px-4 border-t-[12px] border-black text-black">
+        <div className="max-w-[1600px] mx-auto">
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-8">
+                <h2 className="text-6xl md:text-[8vw] leading-none font-black text-black font-[Syne] uppercase tracking-tighter">
+                    CLIENT <br/> INTELLIGENCE
                 </h2>
-                <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                    <span className="text-slate-500 font-mono text-xs uppercase">Live Feed</span>
+                <div className="flex items-center gap-2 bg-[#CCFF00] px-4 py-2 border-2 border-black font-bold shadow-[4px_4px_0_0_rgba(0,0,0,1)]">
+                    <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse border border-black"></div>
+                    <span className="text-black font-mono text-xs uppercase tracking-widest">Live Feed //</span>
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 border-[4px] border-black">
                 {REVIEWS.map((review, idx) => (
-                    <div key={idx} className="group bg-[#0a0a0a] border border-white/5 p-8 md:p-12 relative hover:border-white/20 transition-all duration-300 hover:-translate-y-2">
-                        {/* Brutalist Corner Markers */}
-                        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white/20 group-hover:border-teal-500 transition-colors"></div>
-                        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white/20 group-hover:border-teal-500 transition-colors"></div>
-                        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white/20 group-hover:border-teal-500 transition-colors"></div>
-                        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white/20 group-hover:border-teal-500 transition-colors"></div>
-
-                        <div className="mb-8">
-                            <Quote className="w-8 h-8 text-teal-900 fill-teal-900 mb-4" />
-                            <p className="text-xl md:text-2xl font-bold text-white leading-tight font-[Syne]">
+                    <div key={idx} className={`group bg-white p-8 md:p-12 relative transition-all duration-300 hover:bg-[#CCFF00] flex flex-col ${idx !== 2 ? 'border-b-[4px] md:border-b-0 md:border-r-[4px] border-black' : ''}`}>
+                        
+                        <div className="mb-12 flex-grow">
+                            <Quote className="w-12 h-12 text-black/20 fill-black/20 mb-8 transform group-hover:rotate-180 transition-transform duration-500" />
+                            <p className="text-2xl md:text-3xl font-black text-black leading-[1.1] font-[Syne] uppercase">
                                 "{review.text}"
                             </p>
                         </div>
 
-                        <div className="flex items-end justify-between border-t border-white/5 pt-6">
-                            <div>
-                                <p className="text-teal-400 font-bold text-sm tracking-wide uppercase mb-1">{review.client}</p>
-                                <p className="text-slate-500 text-xs font-mono">{review.author} — {review.role}</p>
+                        <div className="border-t-[4px] border-black pt-6">
+                            <div className="flex items-center justify-between mb-2">
+                                <p className="text-black font-black text-lg tracking-wide uppercase">{review.client}</p>
+                                <div className="text-black font-mono font-bold text-xs">A++</div>
                             </div>
-                            <div className="flex gap-1">
-                                {[1,2,3,4,5].map(i => (
-                                    <Star key={i} className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-                                ))}
-                            </div>
+                            <p className="text-black/60 text-xs font-mono font-bold">{review.author} — {review.role}</p>
                         </div>
                     </div>
                 ))}

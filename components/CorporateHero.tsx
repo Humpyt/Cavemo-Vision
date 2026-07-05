@@ -1,95 +1,117 @@
-
-import React from 'react';
-import { ArrowUpRight, Play, ArrowDown, Users } from 'lucide-react';
+import React from "react";
+import { ArrowUpRight, Play, Globe, ChevronRight } from "lucide-react";
 
 const CorporateHero: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen pt-32 pb-20 overflow-hidden bg-[#0A0A0B]">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-teal-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
-      
-      <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Content */}
-          <div className="lg:col-span-6 relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
-                  <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-slate-400">Innovating the Future</span>
-              </div>
+    <section className="relative w-full min-h-[100svh] flex items-center justify-center overflow-hidden bg-[#050505]">
+      {/* Background Ambience */}
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-luminosity"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
 
-              <h1 className="text-6xl md:text-8xl font-bold font-[Syne] text-white leading-[0.9] tracking-tighter mb-8">
-                  Leading Future <br />
-                  for <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-white">Business.</span>
-              </h1>
-              
-              <p className="text-slate-400 text-lg max-w-md leading-relaxed mb-10">
-                  Committed to delivering innovative solutions that drive success. With a focus on quality, we empower brands to reach new heights.
+      {/* Core Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[150px] pointer-events-none"></div>
+
+      <div className="max-w-[1600px] w-full mx-auto px-6 relative z-10 flex flex-col items-center mt-20">
+        {/* Top Badge */}
+        <div
+          className="animate-fade-in-up"
+          style={{ animationDelay: "0.1s", animationFillMode: "both" }}
+        >
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-12">
+            <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)] animate-pulse"></div>
+            <span className="text-[10px] uppercase font-bold tracking-[0.3em] text-white/80">
+              Corporate Intelligence 2026
+            </span>
+          </div>
+        </div>
+
+        {/* Main Headline */}
+        <div
+          className="text-center max-w-5xl mx-auto animate-fade-in-up mb-12"
+          style={{ animationDelay: "0.2s", animationFillMode: "both" }}
+        >
+          <h1 className="text-6xl md:text-8xl lg:text-[8.5rem] font-bold font-[Manrope] text-white leading-[0.9] tracking-tighter">
+            Architecting <br />
+            <span className="relative inline-block">
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-white">
+                Global Dominance.
+              </span>
+            </span>
+          </h1>
+        </div>
+
+        <div
+          className="animate-fade-in-up"
+          style={{ animationDelay: "0.3s", animationFillMode: "both" }}
+        >
+          <p className="text-slate-400 text-lg md:text-xl max-w-2xl text-center leading-relaxed font-light mb-16 mx-auto">
+            We engineer strategic paradigms for Fortune 500 enterprises, merging
+            predictive data models with elite operational execution.
+          </p>
+        </div>
+
+        {/* Action Buttons */}
+        <div
+          className="flex flex-col sm:flex-row items-center gap-6 animate-fade-in-up mb-24"
+          style={{ animationDelay: "0.4s", animationFillMode: "both" }}
+        >
+          <button className="relative group px-10 py-5 bg-white text-black rounded-full font-bold text-sm uppercase tracking-widest overflow-hidden transition-all hover:scale-105 active:scale-95">
+            <span className="relative z-10 flex items-center gap-3">
+              View Capabilities{" "}
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </span>
+            <div className="absolute inset-0 bg-blue-500 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
+            <div className="absolute inset-0 bg-blue-600 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-700 ease-out z-0 delay-75"></div>
+          </button>
+
+          <button className="group flex items-center gap-4 text-white/70 hover:text-white transition-colors">
+            <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center group-hover:border-white/50 group-hover:bg-white/10 transition-all backdrop-blur-sm">
+              <Play className="w-4 h-4 fill-current ml-1" />
+            </div>
+            <span className="text-xs font-bold tracking-[0.2em] uppercase">
+              Watch Showreel
+            </span>
+          </button>
+        </div>
+
+        {/* Bottom Grid / Stats */}
+        <div
+          className="w-full grid md:grid-cols-3 gap-6 animate-fade-in-up border-t border-white/10 pt-12 mt-auto"
+          style={{ animationDelay: "0.5s", animationFillMode: "both" }}
+        >
+          {[
+            {
+              value: "$4.2B",
+              label: "Capital Directed",
+              desc: "Across global markets",
+            },
+            {
+              value: "142+",
+              label: "Enterprise Clients",
+              desc: "Fortune 500 scale",
+            },
+            {
+              value: "99.4%",
+              label: "Execution Rate",
+              desc: "Precision delivery",
+            },
+          ].map((stat, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center md:items-start text-center md:text-left group cursor-default"
+            >
+              <h4 className="text-4xl lg:text-5xl font-bold font-[Manrope] text-white mb-2 group-hover:text-blue-400 transition-colors">
+                {stat.value}
+              </h4>
+              <p className="text-sm font-bold text-white/50 uppercase tracking-widest">
+                {stat.label}
               </p>
-
-              <div className="flex flex-wrap items-center gap-6">
-                  <button className="bg-teal-500 text-black px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-white transition-all group">
-                      Get Started <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform" />
-                  </button>
-                  <button className="flex items-center gap-3 text-white font-medium group">
-                      <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-teal-500 group-hover:text-black transition-all">
-                          <Play className="w-4 h-4 fill-current" />
-                      </div>
-                      Watch Video
-                  </button>
-              </div>
-
-              {/* Success Badge */}
-              <div className="mt-20 flex items-center gap-8 border-t border-white/10 pt-10">
-                  <div className="flex -space-x-3">
-                      {[1, 2, 3, 4].map(i => (
-                          <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-slate-800 flex items-center justify-center overflow-hidden">
-                              <img src={`https://i.pravatar.cc/150?img=${i + 10}`} alt="user" className="w-full h-full object-cover" />
-                          </div>
-                      ))}
-                      <div className="w-10 h-10 rounded-full border-2 border-black bg-teal-500 flex items-center justify-center text-[10px] font-bold text-black">
-                          +
-                      </div>
-                  </div>
-                  <div>
-                      <p className="text-white font-bold text-sm">We have 100+ happy customer.</p>
-                      <p className="text-slate-500 text-xs">Join our growing ecosystem</p>
-                  </div>
-              </div>
-          </div>
-
-          {/* Right Visuals */}
-          <div className="lg:col-span-6 relative">
-              <div className="relative aspect-square rounded-[3rem] overflow-hidden group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" 
-                    className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 scale-105 group-hover:scale-100" 
-                    alt="Success" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                  
-                  {/* Explore Rotating Badge */}
-                  <div className="absolute bottom-10 right-10 w-32 h-32 flex items-center justify-center z-20">
-                      <div className="absolute inset-0 animate-rotate-slow">
-                          <svg viewBox="0 0 100 100" className="w-full h-full fill-white/40">
-                              <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
-                              <text className="text-[10px] uppercase font-bold tracking-[0.3em]">
-                                  <textPath xlinkHref="#circlePath">Explore More • Explore More • </textPath>
-                              </text>
-                          </svg>
-                      </div>
-                      <ArrowDown className="w-6 h-6 text-white" />
-                  </div>
-
-                  {/* 93% Card */}
-                  <div className="absolute top-10 left-10 bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-2xl w-48 animate-float">
-                      <p className="text-slate-300 text-xs font-bold uppercase mb-2">Projects Completed</p>
-                      <h4 className="text-5xl font-bold text-white mb-2">93%</h4>
-                      <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
-                          <div className="w-[93%] h-full bg-teal-500"></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+              <p className="text-xs text-white/30 mt-2 font-light">
+                {stat.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

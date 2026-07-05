@@ -1,44 +1,56 @@
 
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const CreativeFooter: React.FC = () => {
   return (
-    <footer id="contact" className="bg-black pt-32 pb-12 px-4 border-t border-white/10 relative overflow-hidden">
-        {/* Massive Text Background */}
-        <div className="absolute top-0 left-0 w-full overflow-hidden opacity-10 pointer-events-none">
-            <h1 className="text-[20vw] font-bold text-white whitespace-nowrap leading-none select-none">
-                LET'S TALK
-            </h1>
-        </div>
-
-        <div className="max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-16 min-h-[400px]">
-            <div>
-                <p className="text-teal-500 font-mono mb-4">Start a project</p>
-                <a href="mailto:hello@cavemo.studio" className="text-5xl md:text-8xl font-bold text-white hover:text-teal-400 transition-colors font-[Syne] tracking-tighter block mb-2">
-                    hello@cavemo.studio
+    <footer id="contact" className="bg-[#CCFF00] text-black border-t-[12px] border-black pt-20 px-4 md:px-8 pb-8">
+        <div className="max-w-[1600px] mx-auto border-[4px] border-black bg-white">
+            
+            <div className="p-8 md:p-20 flex flex-col items-center justify-center text-center border-b-[4px] border-black relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-full h-full bg-black transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-0"></div>
+                <p className="font-mono text-sm tracking-widest uppercase mb-12 font-bold relative z-10 group-hover:text-white transition-colors delay-100">Stop browsing.</p>
+                <a href="mailto:hello@cavemo.studio" className="relative z-10 flex flex-col items-center">
+                    <span className="text-[12vw] md:text-[10vw] font-black leading-[0.8] font-[Syne] uppercase tracking-tighter group-hover:text-[#CCFF00] transition-colors duration-300">
+                        START
+                    </span>
+                    <span className="text-[12vw] md:text-[10vw] font-black leading-[0.8] font-[Syne] uppercase tracking-tighter text-transparent" style={{ WebkitTextStroke: "4px black" }}>
+                        BUILDING
+                    </span>
                 </a>
-                <p className="text-slate-500 text-xl">Based in Digital Space. Operating Globally.</p>
             </div>
 
-            <div className="flex flex-col gap-6 items-start md:items-end">
-                <div className="flex gap-4">
-                    {['Instagram', 'Twitter', 'LinkedIn', 'Behance'].map(social => (
-                        <a key={social} href="#" className="px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-all text-sm font-bold uppercase">
-                            {social}
-                        </a>
-                    ))}
+            <div className="flex flex-col md:flex-row">
+                <div className="flex-1 p-8 md:p-12 border-b-[4px] md:border-b-0 md:border-r-[4px] border-black flex flex-col justify-between">
+                    <div>
+                        <h4 className="font-black text-2xl uppercase mb-4">The HQ</h4>
+                        <p className="font-mono text-black/60 font-bold mb-1">Based in Digital Space.</p>
+                        <p className="font-mono text-black/60 font-bold">Operating globally.</p>
+                    </div>
                 </div>
-                <div className="flex items-center gap-2 text-slate-600 text-sm">
-                    <span>&copy; 2025 CAVEMO STUDIO</span>
-                    <span>—</span>
-                    <span>ALL RIGHTS RESERVED</span>
+                
+                <div className="flex-1 p-8 md:p-12 border-b-[4px] md:border-b-0 md:border-r-[4px] border-black">
+                    <h4 className="font-black text-2xl uppercase mb-8">Social Intelligence</h4>
+                    <div className="flex flex-col gap-4">
+                        {['Instagram', 'Twitter', 'LinkedIn', 'Behance'].map(social => (
+                            <a key={social} href="#" className="flex items-center justify-between font-mono font-bold uppercase hover:text-[#CCFF00] hover:bg-black p-2 transition-colors border-b-[2px] border-black/10 hover:border-black">
+                                {social}
+                                <ArrowRight className="w-4 h-4" />
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="flex-1 p-8 md:p-12 flex flex-col justify-end bg-black text-white">
+                    <div className="text-[#CCFF00] font-black text-6xl md:text-8xl font-[Syne] tracking-tighter mb-4">
+                        2025
+                    </div>
+                    <div className="font-mono text-sm uppercase text-white/50 border-t border-white/20 pt-4">
+                        &copy; CAVEMO STUDIO. ALL RIGHTS RESERVED.
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div className="absolute bottom-10 right-10 animate-bounce hidden md:block">
-            <ArrowUpRight className="w-12 h-12 text-teal-500" />
+
         </div>
     </footer>
   );

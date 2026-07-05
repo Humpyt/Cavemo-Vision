@@ -4,16 +4,22 @@ import { Search, ChevronDown, Menu, X, ArrowUpRight, Layout, Sparkles, HardHat, 
 import { NAV_LINKS } from '../constants';
 
 interface NavbarProps {
-    activeVariant?: 'classic' | 'creative' | 'construction' | 'corporate' | 'modern' | 'home6' | 'home7' | 'home8' | 'home9';
-    currentPage?: 'home' | 'about' | 'about2' | 'history' | 'team' | 'team-details' | 'careers' | 'careers-details' | 'news' | 'pricing' | 'feedback' | 'faq' | 'contact' | 'srv-classic' | 'srv-creative' | 'srv-construction' | 'srv-empower' | 'srv-executive' | 'srv-light';
-    onVariantChange: (variant: 'classic' | 'creative' | 'construction' | 'corporate' | 'modern' | 'home6' | 'home7' | 'home8' | 'home9') => void;
-    onPageChange: (page: 'home' | 'about' | 'about2' | 'history' | 'team' | 'team-details' | 'careers' | 'careers-details' | 'news' | 'pricing' | 'feedback' | 'faq' | 'contact' | 'srv-classic' | 'srv-creative' | 'srv-construction' | 'srv-empower' | 'srv-executive' | 'srv-light') => void;
+    activeVariant?: 'classic' | 'classic2' | 'classic3' | 'classic4' | 'classic5' | 'classic6' | 'creative' | 'construction' | 'corporate' | 'modern' | 'home6' | 'home7' | 'home8' | 'home9' | 'software';
+    currentPage?: 'home' | 'about' | 'about2' | 'history' | 'team' | 'team-details' | 'careers' | 'careers-details' | 'news' | 'pricing' | 'feedback' | 'faq' | 'contact' | 'srv-classic' | 'srv-creative' | 'srv-construction' | 'srv-empower' | 'srv-executive' | 'srv-light' | 'port-creative' | 'port-corporate' | 'port-software' | 'port-construction' | 'blog-creative' | 'blog-corporate' | 'blog-software' | 'blog-construction';
+    onVariantChange: (variant: 'classic' | 'classic2' | 'classic3' | 'classic4' | 'classic5' | 'classic6' | 'creative' | 'construction' | 'corporate' | 'modern' | 'home6' | 'home7' | 'home8' | 'home9' | 'software') => void;
+    onPageChange: (page: 'home' | 'about' | 'about2' | 'history' | 'team' | 'team-details' | 'careers' | 'careers-details' | 'news' | 'pricing' | 'feedback' | 'faq' | 'contact' | 'srv-classic' | 'srv-creative' | 'srv-construction' | 'srv-empower' | 'srv-executive' | 'srv-light' | 'port-creative' | 'port-corporate' | 'port-software' | 'port-construction' | 'blog-creative' | 'blog-corporate' | 'blog-software' | 'blog-construction') => void;
 }
 
 const VARIANTS = [
     { id: 'classic', name: 'Classic Corporate', desc: 'Traditional consulting edge.', tag: 'Standard', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=400&h=250&fit=crop', icon: Layout },
+    { id: 'classic2', name: 'Classic Corporate 2', desc: 'Modern high-impact classic.', tag: 'New', img: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=400&h=250&fit=crop', icon: Target },
+    { id: 'classic3', name: 'Classic Corporate 3', desc: 'Futuristic premium corporate.', tag: 'Hot', img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&h=250&fit=crop', icon: Layout },
+    { id: 'classic4', name: 'Classic Corporate 4', desc: 'Sleek dark mode corporate.', tag: 'Dark', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&h=250&fit=crop', icon: Zap },
+    { id: 'classic5', name: 'Classic Corporate 5', desc: 'Luxury ivory design scheme.', tag: 'Luxury', img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=400&h=250&fit=crop', icon: Diamond },
+    { id: 'classic6', name: 'Classic Corporate 6', desc: 'Monolithic Swiss Grid design.', tag: 'Swiss', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&h=250&fit=crop', icon: Target },
     { id: 'creative', name: 'Creative Studio', desc: 'Dark mode agency energy.', tag: 'Agency', img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=400&h=250&fit=crop', icon: Sparkles },
     { id: 'construction', name: 'Build & Industrial', desc: 'Heavy-duty construction.', tag: 'Industry', img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=400&h=250&fit=crop', icon: HardHat },
+    { id: 'software', name: 'Software & Web', desc: 'High-tech engineering.', tag: 'Tech', img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&h=250&fit=crop', icon: Cpu },
     { id: 'home9', name: 'Bexon Empower', desc: 'Deep teal mesh tones.', tag: 'Featured', img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=400&h=250&fit=crop', icon: Rocket },
     { id: 'home8', name: 'Bexon Executive', desc: 'High-impact executive.', tag: 'Premium', img: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=400&h=250&fit=crop', icon: Briefcase },
     { id: 'home7', name: 'Bexon Light', desc: 'Airy minimalist layout.', tag: 'Empowering', img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=400&h=250&fit=crop', icon: Zap },
@@ -185,6 +191,62 @@ const Navbar: React.FC<NavbarProps> = ({ activeVariant = 'classic', currentPage 
                                         <PageItem icon={PhoneCall} title="Contact" desc="Initialize Uplink" onClick={() => onPageChange('contact')} />
                                         <PageItem icon={Rocket} title="Mission" desc="The Strategy" onClick={() => onPageChange('history')} />
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {link.label === 'Portfolio' && hoveredLink === 'Portfolio' && (
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[800px] animate-fade-in-up origin-top">
+                            <div className="bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 overflow-hidden flex p-6 gap-6">
+                                <div className="flex-1 p-2 border-r border-slate-50">
+                                    <h5 className="px-4 text-[9px] font-extrabold text-indigo-600 uppercase tracking-[0.3em] mb-4">Enterprise</h5>
+                                    <div className="space-y-1">
+                                        <PageItem icon={Briefcase} title="Corporate Work" desc="Global M&A" onClick={() => onPageChange('port-corporate')} />
+                                        <PageItem icon={HardHat} title="Construction" desc="Built Environments" onClick={() => onPageChange('port-construction')} />
+                                    </div>
+                                </div>
+                                <div className="flex-1 p-2 border-r border-slate-50">
+                                    <h5 className="px-4 text-[9px] font-extrabold text-pink-600 uppercase tracking-[0.3em] mb-4">Tech & Design</h5>
+                                    <div className="space-y-1">
+                                        <PageItem icon={Sparkles} title="Creative Hub" desc="Identity Lab" onClick={() => onPageChange('port-creative')} />
+                                        <PageItem icon={Cpu} title="Software Log" desc="Systems Built" onClick={() => onPageChange('port-software')} />
+                                    </div>
+                                </div>
+                                <div className="w-[250px] bg-slate-50 rounded-2xl p-6 relative overflow-hidden flex flex-col justify-end border border-slate-100">
+                                    <h4 className="text-sm font-bold text-slate-900 mb-2 font-[Syne]">View all cases</h4>
+                                    <p className="text-slate-500 text-[10px] mb-4">Explore our entire catalogue of successful transformations.</p>
+                                    <button className="flex items-center gap-2 text-teal-600 font-bold text-xs uppercase hover:text-teal-700 transition-colors">
+                                        View Archive <ArrowRight className="w-3 h-3" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {link.label === 'Blog' && hoveredLink === 'Blog' && (
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[800px] animate-fade-in-up origin-top">
+                            <div className="bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 overflow-hidden flex p-6 gap-6">
+                                <div className="flex-1 p-2 border-r border-slate-50">
+                                    <h5 className="px-4 text-[9px] font-extrabold text-teal-600 uppercase tracking-[0.3em] mb-4">Enterprise</h5>
+                                    <div className="space-y-1">
+                                        <PageItem icon={Briefcase} title="Corporate Press" desc="Global Insights" onClick={() => onPageChange('blog-corporate')} />
+                                        <PageItem icon={HardHat} title="Construction News" desc="Industry Updates" onClick={() => onPageChange('blog-construction')} />
+                                    </div>
+                                </div>
+                                <div className="flex-1 p-2 border-r border-slate-50">
+                                    <h5 className="px-4 text-[9px] font-extrabold text-blue-600 uppercase tracking-[0.3em] mb-4">Tech & Design</h5>
+                                    <div className="space-y-1">
+                                        <PageItem icon={Sparkles} title="The Journal" desc="Culture & Chaos" onClick={() => onPageChange('blog-creative')} />
+                                        <PageItem icon={Cpu} title="Engineering Log" desc="Technical Dives" onClick={() => onPageChange('blog-software')} />
+                                    </div>
+                                </div>
+                                <div className="w-[250px] bg-slate-900 rounded-2xl p-6 relative overflow-hidden flex flex-col justify-end border border-slate-800">
+                                    <h4 className="text-sm font-bold text-white mb-2 font-[Syne]">Read the Latest</h4>
+                                    <p className="text-slate-400 text-[10px] mb-4">Stay updated with our newest publications and research.</p>
+                                    <button className="flex items-center gap-2 text-teal-400 font-bold text-xs uppercase hover:text-white transition-colors">
+                                        View All Posts <ArrowRight className="w-3 h-3" />
+                                    </button>
                                 </div>
                             </div>
                         </div>
